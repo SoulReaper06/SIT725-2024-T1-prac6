@@ -1,3 +1,3 @@
-# SIT725-2024-T1-prac5
+# SIT725-2024-T1-prac6
 
-## Implemented MVC Structure 
+## Tested POST and GET Api using MOCHA CHAI AND REQUEST
