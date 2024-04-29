@@ -7,16 +7,14 @@ exports.submitAdopter = async (req, res) => {
     mobileNumber: req.body.number,
     email: req.body.email,
     address: req.body.address,
-    description: req.body.description,
-    imageUrl: req.body.imageurl
   });
 
   try {
     const savedAdopter = await newAdopter.save();
     console.log('Adopter saved successfully:', savedAdopter);
-    res.redirect('/');
+    res.status(200).json({ message: 'Success', adopter: savedAdopter }); 
   } catch (err) {
     console.error('Error saving adopter:', err);
-    res.status(500).send('Error saving Adopter to database');
+    res.status(500).json({ error: 'Error saving Adopter to database' }); 
   }
 };

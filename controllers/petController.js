@@ -10,10 +10,10 @@ exports.submitPet = async (req, res) => {
   try {
     const savedPet = await newPet.save();
     console.log('Pet saved successfully:', savedPet);
-    res.redirect('/');
+    res.status(200).json({ message: 'Success', pet: savedPet }); 
   } catch (err) {
     console.error('Error saving pet:', err);
-    res.status(500).send('Error saving pet to database');
+    res.status(500).json({ error: 'Error saving Pet to database' }); 
   }
 };
 
